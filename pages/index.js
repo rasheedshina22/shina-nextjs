@@ -1,21 +1,13 @@
 import Head from 'next/head';
 import ArticleList from '../components/ArticleList';
+import { server } from '../config';
 import styles from '../styles/Layout.module.css';
 
 export default function Home({ articles }) {
   return (
-    <main className={styles.container}>
-      <Head>
-        <title>webdev news</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="keywords"
-          content="web development programming software development"
-        />
-      </Head>
-
+    <div>
       <ArticleList articles={articles} />
-    </main>
+    </div>
   );
 }
 
@@ -31,3 +23,15 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+// export const getStaticProps = async (context) => {
+//   const res = await fetch(`${server}/api/articles`);
+
+//   const articles = await res.json();
+
+//   return {
+//     props: {
+//       articles,
+//     },
+//   };
+// };

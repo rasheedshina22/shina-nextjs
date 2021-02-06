@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Meta from '../components/Meta';
 
 export default function about() {
   return (
-    <div style={{ marginBottom: '5rem' }}>
-      <h5> this is the about page</h5>
+    <div>
+      <Meta title="About" />
+      <h5 style={{ marginBottom: '5rem' }}>Done</h5>
       <Link href="/">Go back</Link>
     </div>
   );
